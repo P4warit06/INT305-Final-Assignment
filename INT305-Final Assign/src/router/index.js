@@ -1,15 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
-import QueryView from "../views/QueryView.vue";
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+import HomePage from "../views/HomePage.vue";
+import ProductQueryView from "../views/ProductQueryView.vue";
+import OrderQueryView from "../views/OrderQueryView.vue";
+
+export default createRouter({
+  history: createWebHistory(),
   routes: [
-    {
-      path: "/query/:id",
-      name: "query",
-      component: QueryView,
-    },
+    { path: "/", component: HomePage },
+    { path: "/products/query/:id", component: ProductQueryView },
+    { path: "/orders/query/:id", component: OrderQueryView },
   ],
 });
-
-export default router;
